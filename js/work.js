@@ -22,7 +22,7 @@
         contribution: "Focused primarily on frontend development, UI/UX implementation, visual animations and improving the overall user experience.",
         tech: ["HTML", "CSS", "JavaScript", "Express.js", "Prisma", "MySQL", "Figma"],
         github: "https://github.com/Veroush/studie4su",
-        image: "img/project-studie4su-thumbnail.png",
+        image: "img/portfolio-studie4su.png",
       },
     ],
     diamonds: [
