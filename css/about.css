@@ -26,15 +26,38 @@
 .about-grid__copy p span.tech-inline { display: inline-flex; align-items: center; gap: 4px; vertical-align: middle; }
 
 .value {
+  position: relative;
   padding: 1.75rem;
   border: 1px solid var(--line);
   border-radius: var(--radius);
   background: var(--bg);
+  overflow: hidden;
   transition: transform .3s var(--ease), box-shadow .3s var(--ease);
 }
 .value:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); }
 .value h3 { font-family: var(--serif); font-size: 1.35rem; margin-bottom: .6rem; }
 .value p { color: var(--muted); font-size: 14.5px; }
+
+.value__content {
+  transition: opacity .35s var(--ease);
+}
+.value__media {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity .35s var(--ease);
+}
+.value__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.value:hover .value__content { opacity: 0; }
+.value:hover .value__media { opacity: 1; }
 
 @media (max-width: 768px) {
   .about-grid { grid-template-columns: 1fr; }
@@ -276,5 +299,8 @@
   .skill-tree__particles span, .tree-node__dot {
     animation: none !important; transition: none !important;
     opacity: 1 !important; transform: none !important;
+  }
+  .value__content, .value__media {
+    transition: none !important;
   }
 }
