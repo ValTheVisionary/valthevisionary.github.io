@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About — Valentino Amatsaleh</title>
+<meta name="description" content="About Valentino Amatsaleh — a Software Engineering student passionate about building real-world applications and learning new technologies.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/about.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="./index.html" class="nav__logo-circle" aria-label="Home — Valentino Amatsaleh">
+      <img src="./img/navbar-logo.jpeg" alt="Valentino Amatsaleh logo">
+    </a>
+    <nav class="nav__links">
+      <a href="./index.html">Home</a>
+      <a href="./about.html" class="active">About</a>
+      <a href="./work.html">Work</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<!-- Manga-panel intro. Replace img/manga-panel-1.png ... manga-panel-5.png with your real panel images. -->
+<div class="manga-hero"
+     data-manga-hero
+     role="button"
+     tabindex="0"
+     aria-label="Manga introduction — click or press enter to advance"
+     data-p1="./img/manga-panel-1.png"
+     data-p2="./img/manga-panel-2.png"
+     data-p3="./img/manga-panel-3.png"
+     data-p4="./img/manga-panel-4.png"
+     data-p5="./img/manga-panel-5.png">
+  <button class="manga-hero__skip" data-manga-skip aria-label="Skip introduction">Skip</button>
+  <div class="manga-hero__stage">
+    <div class="manga-hero__slot manga-hero__slot--top" data-manga-top></div>
+    <div class="manga-hero__slot manga-hero__slot--bottom" data-manga-bottom></div>
+    <div class="manga-hero__center" data-manga-center></div>
+  </div>
+  <div class="manga-hero__hint" data-manga-hint></div>
+</div>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow reveal">About</p>
+      <h1 class="page-hero__title reveal">Software Engineering student,<br><em>always learning.</em></h1>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container about-grid">
+      <figure class="about-grid__photo reveal">
+        <!-- Replace with your own profile photo -->
+        <img src="./img/profile.jpg" alt="Portrait of Valentino Amatsaleh" loading="lazy" width="1024" height="1024">
+      </figure>
+      <div class="about-grid__copy reveal">
+        <h2>About me.</h2>
+        <p>I'm Valentino Amatsaleh, a Software Engineering student who enjoys learning how to build real-world applications and steadily improve my programming skills.</p>
+        <p>
+          I like solving problems, exploring new technologies and creating projects that give me more hands-on experience as a developer. My experience so far includes working with
+          <span class="tech-inline"><img class="tech-icon" src="./img/tech/java-programming-language-icon.svg" alt="" width="18" height="18"><span>Java</span></span>,
+          <span class="tech-inline"><img class="tech-icon" src="./img/tech/javascript-programming-language-icon.svg" alt="" width="18" height="18"><span>JavaScript</span></span>,
+          <span class="tech-inline"><img class="tech-icon" src="./img/tech/html-icon.svg" alt="" width="18" height="18"><span>HTML</span></span>,
+          <span class="tech-inline"><img class="tech-icon" src="./img/tech/css-icon.svg" alt="" width="18" height="18"><span>CSS</span></span>,
+          <span class="tech-inline"><img class="tech-icon" src="./img/tech/mysql-icon.svg" alt="" width="18" height="18"><span>MySQL</span></span> and
+          <span class="tech-inline"><img class="tech-icon" src="./img/tech/figma-icon.svg" alt="" width="18" height="18"><span>Figma</span></span> across both academic and personal projects.
+        </p>
+        <p>
+          I'm always eager to learn new tools, experiment with modern technologies and take on challenges that help me grow — and I upload my projects to
+          <span class="tech-inline"><img class="tech-icon" src="./img/tech/github-icon.svg" alt="" width="18" height="18"><span>GitHub</span></span> to track my progress along the way.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">The Journey</p>
+        <h2>My skill tree — <em>from roots to leaves.</em></h2>
+      </header>
+
+      <div class="skill-tree" data-skill-tree>
+        <div class="skill-tree__particles" aria-hidden="true">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+
+        <div class="tree-layer tree-layer--roots">
+          <p class="tree-layer__label">Roots · Foundations</p>
+          <div class="tree-layer__row">
+            <button class="tree-node tree-node--root" data-node
+              data-kind="root" data-title="O.S Maretraite" data-meta="Primary School · 2010 – 2018"
+              data-description="Where I first learned how to learn — the foundation that made everything after it possible.">
+              <span class="tree-node__dot"></span><span class="tree-node__label">Primary</span><span class="tree-node__sub">O.S Maretraite</span>
+            </button>
+            <button class="tree-node tree-node--root" data-node
+              data-kind="root" data-title="J.E. Dennertschool" data-meta="Secondary School · Oct 2018 – Aug 2021"
+              data-description="Middle school years where curiosity started turning into direction.">
+              <span class="tree-node__dot"></span><span class="tree-node__label">Secondary</span><span class="tree-node__sub">J.E. Dennertschool</span>
+            </button>
+            <button class="tree-node tree-node--root" data-node
+              data-kind="root" data-title="Nassy Brouwer College" data-meta="High School · Oct 2021 – Jul 2024"
+              data-description="Graduated with VWO S-pakket. The years that sharpened my discipline and prepared me for university.">
+              <span class="tree-node__dot"></span><span class="tree-node__label">High School</span><span class="tree-node__sub">Nassy Brouwer College</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="tree-connector tree-connector--up-into-trunk" aria-hidden="true"></div>
+
+        <div class="tree-layer tree-layer--trunk">
+          <button class="tree-node tree-node--trunk" data-node
+            data-kind="trunk" data-title="University of Applied Sciences and Technology Suriname" data-meta="ICT — Software Engineering · Nov 2024 – Present"
+            data-description="Where I'm building the core of my craft — programming, databases, system design and modern development practices.">
+            <span class="tree-node__dot"></span><span class="tree-node__label">University</span><span class="tree-node__sub">Higher Education</span>
+          </button>
+        </div>
+
+        <div class="tree-connector tree-connector--down-into-branches" aria-hidden="true"></div>
+
+        <div class="tree-layer tree-layer--branches">
+          <p class="tree-layer__label">Branches · Technical Skills</p>
+          <div class="tree-branches">
+            <div class="tree-branch">
+              <div class="tree-branch__title"><span class="tree-branch__dot"></span>Frontend</div>
+              <div class="tree-branch__skills">
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="HTML" data-meta="Frontend · Skill" data-description="Semantic markup for accessible, well-structured interfaces.">
+                  <img class="tech-icon" src="./img/tech/html-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">HTML</span>
+                </button>
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="CSS" data-meta="Frontend · Skill" data-description="Layout, motion, responsive design and design tokens.">
+                  <img class="tech-icon" src="./img/tech/css-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">CSS</span>
+                </button>
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="JavaScript" data-meta="Frontend · Skill" data-description="The language I reach for daily — ES6+, DOM, async.">
+                  <img class="tech-icon" src="./img/tech/javascript-programming-language-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">JavaScript</span>
+                </button>
+              </div>
+            </div>
+            <div class="tree-branch">
+              <div class="tree-branch__title"><span class="tree-branch__dot"></span>Backend</div>
+              <div class="tree-branch__skills">
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="Node.js" data-meta="Backend · Skill" data-description="Server-side JavaScript runtime for APIs and tooling.">
+                  <img class="tech-icon" src="./img/tech/node-js-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">Node.js</span>
+                </button>
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="Express" data-meta="Backend · Skill" data-description="Minimal HTTP framework I use to build REST APIs.">
+                  <img class="tech-icon" src="./img/tech/express-js-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">Express</span>
+                </button>
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="Prisma" data-meta="Backend · Skill" data-description="Type-safe ORM for modeling and querying MySQL.">
+                  <img class="tech-icon" src="./img/tech/prisma-svgrepo-com.svg" alt="" width="20" height="20"><span class="tree-node__text">Prisma</span>
+                </button>
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="REST APIs" data-meta="Backend · Skill" data-description="Designing clean, predictable endpoints for full-stack apps.">
+                  <span>REST APIs</span>
+                </button>
+              </div>
+            </div>
+            <div class="tree-branch">
+              <div class="tree-branch__title"><span class="tree-branch__dot"></span>Databases</div>
+              <div class="tree-branch__skills">
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="MySQL" data-meta="Databases · Skill" data-description="Relational modeling, migrations and query design.">
+                  <img class="tech-icon" src="./img/tech/mysql-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">MySQL</span>
+                </button>
+              </div>
+            </div>
+            <div class="tree-branch">
+              <div class="tree-branch__title"><span class="tree-branch__dot"></span>Tools</div>
+              <div class="tree-branch__skills">
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="Git" data-meta="Tools · Skill" data-description="Version control for every project I ship.">
+                  <img class="tech-icon" src="./img/tech/git-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">Git</span>
+                </button>
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="GitHub" data-meta="Tools · Skill" data-description="Where my work lives and my progress is tracked.">
+                  <img class="tech-icon" src="./img/tech/github-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">GitHub</span>
+                </button>
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="VS Code" data-meta="Tools · Skill" data-description="My daily editor of choice.">
+                  <img class="tech-icon" src="./img/tech/visual-studio-code-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">VS Code</span>
+                </button>
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="Figma" data-meta="Tools · Skill" data-description="Design, prototyping and UI reference for my apps.">
+                  <img class="tech-icon" src="./img/tech/figma-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">Figma</span>
+                </button>
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="Claude" data-meta="Tools · Skill" data-description="AI pair-programmer for exploration and reasoning.">
+                  <img class="tech-icon" src="./img/tech/claude-ai-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">Claude</span>
+                </button>
+                <button class="tree-node tree-node--skill" data-node data-kind="skill" data-title="ChatGPT" data-meta="Tools · Skill" data-description="Rubber-duck partner for learning new concepts fast.">
+                  <img class="tech-icon" src="./img/tech/openai-icon.svg" alt="" width="20" height="20"><span class="tree-node__text">ChatGPT</span>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="tree-connector tree-connector--down-into-leaves" aria-hidden="true"></div>
+
+        <div class="tree-layer tree-layer--leaves">
+          <p class="tree-layer__label">Leaves · Experience</p>
+          <div class="tree-layer__row tree-layer__row--leaves">
+            <button class="tree-node tree-node--leaf" data-node
+              data-kind="leaf" data-title="Personal Projects" data-meta="Experience — self-driven work"
+              data-description="Projects I've built on my own time to sharpen my skills — from backend inventory systems to this very portfolio.">
+              <span class="tree-node__dot"></span><span class="tree-node__label">Personal Projects</span><span class="tree-node__sub">Click to explore →</span>
+            </button>
+            <button class="tree-node tree-node--leaf" data-node
+              data-kind="leaf" data-title="University Assignments" data-meta="Experience — academic work"
+              data-description="Full-stack and frontend projects built as part of my Software Engineering studies.">
+              <span class="tree-node__dot"></span><span class="tree-node__label">University Assignments</span><span class="tree-node__sub">Click to explore →</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Values</p>
+        <h2>What I hold onto.</h2>
+      </header>
+      <div class="grid grid--4">
+        <article class="value reveal"><h3>Learning</h3><p>Treating every project as a chance to grow as a developer.</p></article>
+        <article class="value reveal"><h3>Problem Solving</h3><p>Breaking problems down and finding clear, practical solutions.</p></article>
+        <article class="value reveal"><h3>Teamwork</h3><p>The best projects come from clear communication and collaboration.</p></article>
+        <article class="value reveal"><h3>Curiosity</h3><p>Exploring new tools and technologies to keep improving.</p></article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Skill-tree info card (populated by js/about.js) -->
+<div class="tree-card__backdrop is-hidden" data-tree-card-backdrop>
+  <div class="tree-card" data-tree-card role="dialog" aria-modal="true">
+    <button class="tree-card__close" data-tree-card-close aria-label="Close">&times;</button>
+    <p class="tree-card__kind" data-tree-card-kind></p>
+    <h3 data-tree-card-title></h3>
+    <p class="tree-card__meta" data-tree-card-meta></p>
+    <p class="tree-card__desc" data-tree-card-desc></p>
+  </div>
+</div>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <p class="footer__name">Valentino Amatsaleh</p>
+      <p class="footer__muted">© 2026 · Software Engineering Student.</p>
+    </div>
+    <a href="./contact.html" class="footer__cta">
+      <span>Contact Me</span>
+      <span aria-hidden="true" class="footer__cta-arrow">→</span>
+    </a>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+<script src="./js/about.js"></script>
+</body>
+</html>

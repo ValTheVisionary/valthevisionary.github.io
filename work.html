@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Work — Valentino Amatsaleh</title>
+<meta name="description" content="Projects by Valentino Amatsaleh, sorted by the role he played — front-end, back-end, full-stack, and solo builds.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/work.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="./index.html" class="nav__logo-circle" aria-label="Home — Valentino Amatsaleh">
+      <img src="./img/navbar-logo.jpeg" alt="Valentino Amatsaleh logo">
+    </a>
+    <nav class="nav__links">
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./work.html" class="active">Work</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="page-hero">
+    <div class="container">
+      <p class="eyebrow reveal">Selected work</p>
+      <h1 class="page-hero__title reveal">Pick a suit,<br><em>see the projects I built with it.</em></h1>
+      <p class="page-hero__lede reveal">Each suit represents a different role I played in a project. Hover a card to see what it means. Click to reveal the work.</p>
+    </div>
+  </section>
+
+  <section class="section deck-section">
+    <div class="container">
+      <div class="deck" data-deck role="list" aria-label="Choose a suit"></div>
+      <div data-suit-view class="is-hidden"></div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <p class="footer__name">Valentino Amatsaleh</p>
+      <p class="footer__muted">© 2026 · Software Engineering Student.</p>
+    </div>
+    <a href="./contact.html" class="footer__cta">
+      <span>Contact Me</span>
+      <span aria-hidden="true" class="footer__cta-arrow">→</span>
+    </a>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+<script src="./js/work.js"></script>
+</body>
+</html>

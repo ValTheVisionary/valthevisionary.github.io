@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact — Valentino Amatsaleh</title>
+<meta name="description" content="Get in touch with Valentino Amatsaleh — for collaborations, opportunities, or just to say hello.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="./css/main.css">
+<link rel="stylesheet" href="./css/contact.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="./index.html" class="nav__logo-circle" aria-label="Home — Valentino Amatsaleh">
+      <img src="./img/navbar-logo.jpeg" alt="Valentino Amatsaleh logo">
+    </a>
+    <nav class="nav__links">
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./work.html">Work</a>
+      <a href="./contact.html" class="active">Contact</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <section class="contact-hero">
+    <div class="container contact-hero__inner">
+      <div class="contact-hero__left reveal">
+        <p class="eyebrow">Contact</p>
+        <h1 class="contact-hero__title">Let's make<br><em>something good.</em></h1>
+
+        <div class="terminal">
+          <div class="terminal__bar">
+            <span class="terminal__dot terminal__dot--r"></span>
+            <span class="terminal__dot terminal__dot--y"></span>
+            <span class="terminal__dot terminal__dot--g"></span>
+            <span class="terminal__title" data-terminal-title>contact.py</span>
+          </div>
+          <pre class="terminal__body" data-terminal-body></pre>
+        </div>
+      </div>
+
+      <div class="contact-hero__right reveal" data-portrait-parallax>
+        <div class="contact-hero__glow" aria-hidden="true"></div>
+        <!-- Replace with your own portrait photo -->
+        <img class="contact-hero__portrait" src="./img/contact-profile.jpeg" alt="Portrait of Valentino Amatsaleh" loading="eager">
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Ways to reach me</p>
+        <h2>Pick a channel — <em>I answer them all.</em></h2>
+      </header>
+      <ul class="contact-cards">
+        <li class="reveal">
+          <a class="contact-card" href="mailto:valentino.amatsaleh@gmail.com">
+            <span class="contact-card__icon" aria-hidden="true">&#9993;</span>
+            <span class="contact-card__label">Email</span>
+            <span class="contact-card__value">valentino.amatsaleh@gmail.com</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="contact-card" href="https://www.linkedin.com/in/valentino-amatsaleh" target="_blank" rel="noopener noreferrer">
+            <span class="contact-card__icon" aria-hidden="true"><img src="./img/tech/linkedin-app-icon.svg" alt=""></span>
+            <span class="contact-card__label">LinkedIn</span>
+            <span class="contact-card__value">valentino-amatsaleh</span>
+          </a>
+        </li>
+        <li class="reveal">
+          <a class="contact-card" href="https://github.com/ValTheVisionary" target="_blank" rel="noopener noreferrer">
+            <span class="contact-card__icon" aria-hidden="true"><img src="./img/tech/github-icon.svg" alt=""></span>
+            <span class="contact-card__label">GitHub</span>
+            <span class="contact-card__value">ValTheVisionary</span>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Where I am</p>
+        <h2>Based in <em>Paramaribo, Suriname.</em></h2>
+      </header>
+      <ul class="contact-cards contact-cards--single">
+        <li class="reveal">
+          <div class="contact-card contact-card--static">
+            <span class="contact-card__icon" aria-hidden="true">&#9678;</span>
+            <span class="contact-card__label">Location</span>
+            <span class="contact-card__value">Paramaribo, Suriname</span>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container contact-form-wrap">
+      <header class="section__head">
+        <p class="eyebrow">Send a message</p>
+        <h2>Start the conversation.</h2>
+      </header>
+
+      <form class="contact-form contact-form--glass reveal" data-contact-form novalidate>
+        <div class="field field--float" data-field="name">
+          <input type="text" id="name" name="name" placeholder=" " autocomplete="name">
+          <label for="name">Name</label>
+          <span class="field__error"></span>
+        </div>
+        <div class="field field--float" data-field="email">
+          <input type="email" id="email" name="email" placeholder=" " autocomplete="email">
+          <label for="email">Email</label>
+          <span class="field__error"></span>
+        </div>
+        <div class="field field--float" data-field="subject">
+          <input type="text" id="subject" name="subject" placeholder=" ">
+          <label for="subject">Subject</label>
+          <span class="field__error"></span>
+        </div>
+        <div class="field field--float" data-field="message">
+          <textarea id="message" name="message" rows="5" placeholder=" "></textarea>
+          <label for="message">Message</label>
+          <span class="field__error"></span>
+        </div>
+        <button type="submit" class="btn-send">
+          <span>Send message</span>
+          <span aria-hidden="true" class="btn-send__arrow">→</span>
+        </button>
+        <p class="form__success is-hidden" data-form-success>Thanks — your message has been sent. I'll be in touch soon.</p>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <p class="footer__name">Valentino Amatsaleh</p>
+      <p class="footer__muted">© 2026 · Software Engineering Student.</p>
+    </div>
+    <a href="./contact.html" class="footer__cta">
+      <span>Contact Me</span>
+      <span aria-hidden="true" class="footer__cta-arrow">→</span>
+    </a>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+<script src="./js/contact.js"></script>
+</body>
+</html>

@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valentino Amatsaleh — Software Engineering Student</title>
+<meta name="description" content="Portfolio of Valentino Amatsaleh, a Software Engineering student building real-world applications with JavaScript, Java, Node.js and more.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@300;400;500;600;700&display=swap">
+<link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav__inner">
+    <a href="./index.html" class="nav__logo-circle" aria-label="Home — Valentino Amatsaleh">
+      <img src="./img/navbar-logo.jpeg" alt="Valentino Amatsaleh logo">
+    </a>
+    <nav class="nav__links">
+      <a href="./index.html">Home</a>
+      <a href="./about.html">About</a>
+      <a href="./work.html">Work</a>
+      <a href="./contact.html">Contact</a>
+    </nav>
+    <button class="nav__toggle" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!--
+    Scroll-driven hero video.
+    The section is tall (400vh) so there's room to scroll through it; the
+    inner .scroll-hero__pin stays pinned to the viewport via CSS
+    position: sticky while that happens. js/main.js (initScrollHero) reads
+    scroll progress through the section and:
+      - scrubs the video's currentTime to match (no autoplay — playback is
+        entirely driven by scroll position)
+      - types the overlay headline in sync with that same progress
+    Once the section has been fully scrolled through, the page continues
+    scrolling into the rest of the site normally.
+
+    To swap in the final video: replace
+    img/hero-scroll-video-placeholder.mp4 with your export, keeping the
+    same filename — or update the src attribute below.
+  -->
+  <section class="scroll-hero" data-scroll-hero>
+    <div class="scroll-hero__pin" data-scroll-hero-pin>
+      <video
+        class="scroll-hero__video"
+        data-scroll-hero-video
+        src="./img/hero-scroll-video.mp4"
+        muted
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+      ></video>
+      <div class="scroll-hero__scrim" aria-hidden="true"></div>
+      <div class="scroll-hero__content">
+        <h1 class="scroll-hero__message">
+          <span data-scroll-hero-text></span><span class="scroll-hero__cursor" aria-hidden="true"></span>
+        </h1>
+      </div>
+      <div class="scroll-hero__indicator" data-scroll-hero-indicator aria-hidden="true">
+        <span>Scroll</span>
+        <span class="scroll-hero__indicator-line"></span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Currently</p>
+        <h2>Where I am right now.</h2>
+      </header>
+      <div class="grid grid--3">
+        <article class="card reveal">
+          <span class="card__index">01</span>
+          <h3>Software Engineering Student</h3>
+          <p>Year 2 student at the University of Applied Sciences and Technology Suriname, studying ICT — Software Engineering.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__index">02</span>
+          <h3>Project Builder</h3>
+          <p>Building academic and personal projects across frontend, backend and databases to grow as a developer.</p>
+        </article>
+        <article class="card reveal">
+          <span class="card__index">03</span>
+          <h3>Continuous Learner</h3>
+          <p>Exploring modern tools and technologies, and uploading projects to GitHub to track my progress.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Skills</p>
+        <h2>The toolkit.</h2>
+      </header>
+      <div class="grid grid--2">
+        <div class="panel reveal">
+          <h3 class="panel__title">Programming Languages</h3>
+          <ul class="badges">
+            <li><img class="tech-icon" src="./img/tech/javascript-programming-language-icon.svg" alt=""><span>JavaScript</span></li>
+            <li><img class="tech-icon" src="./img/tech/java-programming-language-icon.svg" alt=""><span>Java</span></li>
+            <li><img class="tech-icon" src="./img/tech/html-icon.svg" alt=""><span>HTML</span></li>
+            <li><img class="tech-icon" src="./img/tech/css-icon.svg" alt=""><span>CSS</span></li>
+          </ul>
+        </div>
+        <div class="panel reveal">
+          <h3 class="panel__title">Backend</h3>
+          <ul class="badges">
+            <li><img class="tech-icon" src="./img/tech/node-js-icon.svg" alt=""><span>Node.js</span></li>
+            <li><img class="tech-icon" src="./img/tech/express-js-icon.svg" alt=""><span>Express.js</span></li>
+            <li><img class="tech-icon" src="./img/tech/prisma-svgrepo-com.svg" alt=""><span>Prisma ORM</span></li>
+          </ul>
+        </div>
+        <div class="panel reveal">
+          <h3 class="panel__title">Databases &amp; Tools</h3>
+          <ul class="badges">
+            <li><img class="tech-icon" src="./img/tech/mysql-icon.svg" alt=""><span>MySQL</span></li>
+            <li><img class="tech-icon" src="./img/tech/git-icon.svg" alt=""><span>Git</span></li>
+            <li><img class="tech-icon" src="./img/tech/github-icon.svg" alt=""><span>GitHub</span></li>
+            <li><img class="tech-icon" src="./img/tech/figma-icon.svg" alt=""><span>Figma</span></li>
+          </ul>
+        </div>
+        <div class="panel reveal">
+          <h3 class="panel__title">Soft skills</h3>
+          <ul class="badges badges--soft">
+            <li>Problem Solving</li>
+            <li>Teamwork</li>
+            <li>Communication</li>
+            <li>Curiosity</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Experience</p>
+        <h2>Where I am in my journey.</h2>
+      </header>
+      <div class="panel reveal panel--narrow">
+        <p class="panel__lede">I am currently focused on developing my skills through academic coursework, personal projects, and hands-on software development experience.</p>
+        <p>Although I have not yet worked professionally, I actively build projects that strengthen my frontend, backend, database, and software engineering skills.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <header class="section__head section__head--row">
+        <div>
+          <p class="eyebrow">Selected work</p>
+          <h2>Things I've been building.</h2>
+        </div>
+        <a href="./work.html" class="link-arrow">See all work →</a>
+      </header>
+      <div class="grid grid--3">
+        <a href="./work.html" class="project reveal">
+          <div class="project__thumb project__thumb--1"></div>
+          <h3>Studie4SU</h3>
+          <p>Full-stack platform helping students in Suriname explore higher-education programs, events and a study-choice quiz.</p>
+          <span class="project__tags">
+            <span><img class="tech-icon" src="./img/tech/html-icon.svg" alt="" width="16" height="16">HTML</span> ·
+            <span><img class="tech-icon" src="./img/tech/css-icon.svg" alt="" width="16" height="16">CSS</span> ·
+            <span><img class="tech-icon" src="./img/tech/javascript-programming-language-icon.svg" alt="" width="16" height="16">JS</span> ·
+            <span><img class="tech-icon" src="./img/tech/express-js-icon.svg" alt="" width="16" height="16">Express</span> ·
+            <span><img class="tech-icon" src="./img/tech/prisma-svgrepo-com.svg" alt="" width="16" height="16">Prisma</span> ·
+            <span><img class="tech-icon" src="./img/tech/mysql-icon.svg" alt="" width="16" height="16">MySQL</span>
+          </span>
+        </a>
+        <a href="./work.html" class="project reveal">
+          <div class="project__thumb project__thumb--2"></div>
+          <h3>Innovation VS Insects</h3>
+          <p>A frontend school project about innovative products and solutions used to exterminate insects and pests.</p>
+          <span class="project__tags">
+            <span><img class="tech-icon" src="./img/tech/html-icon.svg" alt="" width="16" height="16">HTML</span> ·
+            <span><img class="tech-icon" src="./img/tech/css-icon.svg" alt="" width="16" height="16">CSS</span> ·
+            <span><img class="tech-icon" src="./img/tech/javascript-programming-language-icon.svg" alt="" width="16" height="16">JavaScript</span>
+          </span>
+        </a>
+        <a href="./work.html" class="project reveal">
+          <div class="project__thumb project__thumb--3"></div>
+          <h3>Inventory Management System v2</h3>
+          <p>Full-stack inventory app for products, categories, stock movements and low-stock alerts.</p>
+          <span class="project__tags">
+            <span><img class="tech-icon" src="./img/tech/node-js-icon.svg" alt="" width="16" height="16">Node.js</span> ·
+            <span><img class="tech-icon" src="./img/tech/express-js-icon.svg" alt="" width="16" height="16">Express</span> ·
+            <span><img class="tech-icon" src="./img/tech/prisma-svgrepo-com.svg" alt="" width="16" height="16">Prisma</span> ·
+            <span><img class="tech-icon" src="./img/tech/mysql-icon.svg" alt="" width="16" height="16">MySQL</span>
+          </span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--alt">
+    <div class="container">
+      <header class="section__head">
+        <p class="eyebrow">Certifications</p>
+        <h2>Recognized along the way.</h2>
+      </header>
+      <div class="grid grid--3">
+        <article class="card reveal">
+          <h3>Hogeschooltaal Nederlands 3F</h3>
+          <p>Issued by Hogeschooltaal · 2025</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="container footer__inner">
+    <div>
+      <p class="footer__name">Valentino Amatsaleh</p>
+      <p class="footer__muted">© 2026 · Software Engineering Student.</p>
+    </div>
+    <a href="./contact.html" class="footer__cta">
+      <span>Contact Me</span>
+      <span aria-hidden="true" class="footer__cta-arrow">→</span>
+    </a>
+  </div>
+</footer>
+
+<script src="./js/main.js"></script>
+</body>
+</html>
