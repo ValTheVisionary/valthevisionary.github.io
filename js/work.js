@@ -34,7 +34,7 @@
         contribution: "Focused primarily on backend development, API architecture, database modeling and server-side functionality.",
         tech: ["Node.js", "Express.js", "Prisma", "MySQL", "JavaScript", "HTML", "CSS"],
         github: "https://github.com/ValTheVisionary/Inventory-management-system-v2",
-        image: "img/project-inventory-management-thumbnail.png",
+        image: "img/portfolio-inventoryv2.png",
       },
     ],
     spades: [],
@@ -47,7 +47,7 @@
         description: "A frontend-only educational website showcasing innovative products and solutions used to exterminate insects and pests.",
         tech: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/ValTheVisionary/Innovation-VS-Insects-Website-Frontend-only-",
-        image: "img/project-innovation-vs-insects-thumbnail.png",
+        image: "img/portfolio-ivsi.png",
       },
       {
         title: "Portfolio Website",
@@ -56,7 +56,7 @@
         description: "A personal portfolio website designed to showcase my projects, skills, education and software engineering journey through interactive storytelling and polished animations.",
         tech: ["HTML", "CSS", "JavaScript"],
         github: "https://github.com/ValTheVisionary/valthevisionary.github.io",
-        image: "img/project-portfolio-website-thumbnail.png",
+        image: "img/portfolio-portfolio.png",
       },
     ],
   };
