@@ -118,9 +118,9 @@
         'data-suit-id="' + s.id + '" aria-label="' + s.title + ' \u2014 ' + count + (count === 1 ? " project" : " projects") + '">' +
           '<div class="play-card__inner">' +
             '<div class="play-card__face play-card__face--front">' +
-              '<span class="play-card__corner play-card__corner--tl"><span class="play-card__rank">' + s.short[0] + '</span><span class="play-card__pip">' + s.glyph + '</span></span>' +
+              '<span class="play-card__corner play-card__corner--tl"><span class="play-card__rank">' + "A" + '</span><span class="play-card__pip">' + s.glyph + '</span></span>' +
               '<span class="play-card__center">' + s.glyph + '</span>' +
-              '<span class="play-card__corner play-card__corner--br"><span class="play-card__rank">' + s.short[0] + '</span><span class="play-card__pip">' + s.glyph + '</span></span>' +
+              '<span class="play-card__corner play-card__corner--br"><span class="play-card__rank">' + "A" + '</span><span class="play-card__pip">' + s.glyph + '</span></span>' +
             '</div>' +
             '<div class="play-card__face play-card__face--back">' +
               '<span class="play-card__pip play-card__pip--sm">' + s.glyph + '</span>' +
