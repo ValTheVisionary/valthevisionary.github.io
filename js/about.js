@@ -14,7 +14,7 @@
     var hero = document.querySelector("[data-manga-hero]");
     if (!hero) return;
 
-    var stage = 0; // 0..5
+    var stage = 0; // 0..4
     var slotTop = hero.querySelector("[data-manga-top]");
     var slotBottom = hero.querySelector("[data-manga-bottom]");
     var center = hero.querySelector("[data-manga-center]");
@@ -38,55 +38,85 @@
 
     document.body.style.overflow = "hidden";
 
-    function render() {
+    function makeImg(src, extraClass) {
+      var img = document.createElement("img");
+      img.src = src;
+      img.alt = "Manga panel";
+      img.className = "manga-hero__panel " + extraClass;
+      return img;
+    }
+
+    // Fades/slides the current image out of `slotEl` (if any) while
+    // adding the new image with its own enter animation, so both play
+    // at the same time instead of the outgoing panel just disappearing.
+    function replaceSlot(slotEl, newSrc, exitClass, enterClass) {
+      var oldImg = slotEl.querySelector("img");
+      if (oldImg) {
+        oldImg.classList.add(exitClass);
+        oldImg.addEventListener("animationend", function handler() {
+          oldImg.removeEventListener("animationend", handler);
+          if (oldImg.parentNode === slotEl) slotEl.removeChild(oldImg);
+        });
+      }
+      slotEl.appendChild(makeImg(newSrc, enterClass));
+    }
+
+    function showInitial() {
       slotTop.innerHTML = "";
+      slotTop.appendChild(makeImg(panels.p1, "manga-hero__panel--from-left"));
+    }
+
+    function showStage1() {
+      // Panel 2 slides in from the right, into the bottom half.
       slotBottom.innerHTML = "";
+      slotBottom.appendChild(makeImg(panels.p2, "manga-hero__panel--from-right"));
+    }
+
+    function showStage2() {
+      // Panel 1 exits (fade + slide left); Panel 3 slides in from the
+      // right, taking Panel 1's spot. Panel 2 (bottom) stays untouched.
+      replaceSlot(slotTop, panels.p3, "is-leaving-left", "manga-hero__panel--from-right");
+    }
+
+    function showStage3() {
+      // Panel 2 exits (fade + slide right); Panel 4 slides in from the
+      // left, taking Panel 2's spot. Panel 3 (top) stays untouched.
+      replaceSlot(slotBottom, panels.p4, "is-leaving-right", "manga-hero__panel--from-left");
+    }
+
+    function showStage4() {
+      // Panels 3 and 4 fade away simultaneously, then Panel 5 fades
+      // into the center.
+      var topImg = slotTop.querySelector("img");
+      if (topImg) topImg.classList.add("is-leaving-left");
+      var bottomImg = slotBottom.querySelector("img");
+      if (bottomImg) bottomImg.classList.add("is-leaving-right");
+
       center.innerHTML = "";
-      center.style.display = "none";
+      center.style.display = "grid";
+      center.appendChild(makeImg(panels.p5, "manga-hero__panel--center"));
+    }
 
-      var topSrc = stage <= 1 ? panels.p1 : stage <= 3 ? panels.p3 : null;
-      var bottomSrc = stage === 0 ? null : stage <= 2 ? panels.p2 : stage <= 3 ? panels.p4 : null;
-
-      if (topSrc) {
-        var topImg = document.createElement("img");
-        topImg.src = topSrc;
-        topImg.alt = "Manga panel";
-        topImg.className = "manga-hero__panel " + (topSrc === panels.p1 ? "manga-hero__panel--from-left" : "manga-hero__panel--from-right");
-        if (stage === 2 && topSrc === panels.p1) topImg.classList.add("is-leaving-left");
-        slotTop.appendChild(topImg);
-      }
-      if (bottomSrc) {
-        var bottomImg = document.createElement("img");
-        bottomImg.src = bottomSrc;
-        bottomImg.alt = "Manga panel";
-        bottomImg.className = "manga-hero__panel " + (bottomSrc === panels.p2 ? "manga-hero__panel--from-right" : "manga-hero__panel--from-left");
-        if (stage === 3 && bottomSrc === panels.p2) bottomImg.classList.add("is-leaving-right");
-        slotBottom.appendChild(bottomImg);
-      }
-      if (stage >= 4) {
-        center.style.display = "grid";
-        var centerImg = document.createElement("img");
-        centerImg.src = panels.p5;
-        centerImg.alt = "Manga panel — final";
-        centerImg.className = "manga-hero__panel manga-hero__panel--center";
-        center.appendChild(centerImg);
-      }
-
+    function updateHint() {
       if (stage === 0) hint.innerHTML = "<span>Click anywhere to continue</span>";
       else if (stage > 0 && stage < 4) hint.innerHTML = "<span>Click to turn the page &middot; " + (stage + 1) + " / 5</span>";
       else if (stage === 4) hint.innerHTML = '<span class="manga-hero__hint--scroll">Scroll to continue <span class="manga-hero__arrow">&darr;</span></span>';
       else hint.innerHTML = "";
+    }
+
+    function advance() {
+      if (stage >= 4) return;
+      stage++;
+      if (stage === 1) showStage1();
+      else if (stage === 2) showStage2();
+      else if (stage === 3) showStage3();
+      else if (stage === 4) showStage4();
+
+      updateHint();
 
       if (stage === 4) {
         clearTimeout(autoTimer);
         autoTimer = setTimeout(finish, 7000);
-      }
-    }
-
-    function advance() {
-      if (stage < 4) {
-        stage++;
-        render();
       }
     }
 
@@ -111,7 +141,8 @@
       finish();
     });
 
-    render();
+    showInitial();
+    updateHint();
   }
 
   /* ---------------- Skill Tree ---------------- */
