@@ -153,3 +153,106 @@
   .project-card--glass { animation: none; opacity: 1; transform: none; }
   .suit-view { animation: none; }
 }
+
+.hero-easter-egg { cursor: pointer; }
+
+.joker-overlay {
+  position: fixed; inset: 0; z-index: 150;
+  display: grid; place-items: center; gap: 1.25rem;
+  background: rgba(26,26,26,.35);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  animation: jokerFadeIn .3s var(--ease) both;
+}
+.joker-overlay.is-hidden { display: none; }
+.joker-overlay__close {
+  position: absolute; top: 24px; right: 24px;
+  width: 40px; height: 40px; border-radius: 50%;
+  background: rgba(255,255,255,.85); color: var(--text);
+  font-size: 22px; line-height: 1; display: grid; place-items: center;
+  transition: background .2s var(--ease);
+}
+.joker-overlay__close:hover { background: #fff; }
+.joker-overlay__label {
+  font-family: var(--serif); font-size: 1.5rem; color: #fff;
+  text-align: center; animation: jokerLabelIn .5s var(--ease) both;
+}
+@keyframes jokerFadeIn { from { opacity: 0; } to { opacity: 1; } }
+@keyframes jokerLabelIn { 0% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 1; transform: translateY(0); } }
+
+.joker-card {
+  /* The joker card is rendered inside .joker-overlay rather than
+     inside .deck, so it doesn't automatically inherit the --card-w /
+     --card-h custom properties .deck defines for the suit cards. Without
+     these, width/height fall back to their initial value (auto),
+     which is what made the card's proportions look wrong. Re-declare
+     the same sizing here (mirrored in the media queries below) so the
+     joker card always matches the suit cards' proportions exactly. */
+  --card-w: 240px;
+  --card-h: 340px;
+  animation: jokerCardIn .6s cubic-bezier(.2,.7,.2,1) both;
+  animation-delay: .1s;
+}
+
+/* Sizing overrides for the joker card's SVG icon. `.play-card__pip`,
+   `.play-card__pip--sm`, and `.play-card__center` size the star glyph
+   used by the suit cards via font-size, which has no effect on an
+   <img>. These rules are scoped to the `img` tag specifically, so
+   they only apply to the joker card's SVG and leave the suit cards'
+   text glyphs untouched. */
+img.play-card__pip {
+  width: 1.15rem;
+  height: 1.15rem;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+img.play-card__pip--sm {
+  width: 1.6rem;
+  height: 1.6rem;
+}
+img.play-card__center {
+  width: 6.5rem;
+  height: 6.5rem;
+  margin: auto;
+  object-fit: contain;
+}
+
+@keyframes jokerCardIn {
+  0% { opacity: 0; transform: translateY(30px) scale(.85) rotate(-6deg); }
+  100% { opacity: 1; transform: translateY(0) scale(1) rotate(0); }
+}
+
+/* ================= Hobbies view ================= */
+.hobbies-view { animation: suitEnter 500ms var(--ease) both; padding: 2rem 0 1rem; }
+.hobbies-view__head { text-align: center; max-width: 640px; margin: 0 auto 3rem; }
+.hobbies-grid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1.5rem; }
+.hobbies-group {
+  padding: 1.75rem; border: 1px solid var(--line); border-radius: var(--radius);
+  background: var(--bg);
+}
+.hobbies-group h3 { font-family: var(--serif); font-size: 1.35rem; margin-bottom: 1rem; }
+.hobbies-group ul { display: flex; flex-wrap: wrap; gap: .5rem; }
+.hobbies-group li {
+  padding: .55rem .95rem; border-radius: var(--radius-pill);
+  background: var(--bg-alt); border: 1px solid var(--line);
+  font-size: 13.5px; font-weight: 500;
+}
+
+@media (max-width: 640px) {
+  .hobbies-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 960px) {
+  .joker-card { --card-w: 220px; --card-h: 310px; }
+}
+@media (max-width: 560px) {
+  .joker-card { --card-w: min(78vw, 260px); --card-h: calc(min(78vw, 260px) * 1.42); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .joker-overlay, .joker-overlay__label, .joker-card, .hobbies-view {
+    animation: none !important;
+    opacity: 1 !important; transform: none !important;
+  }
+}

@@ -35,7 +35,7 @@
   <section class="page-hero">
     <div class="container">
       <p class="eyebrow reveal">Selected work</p>
-      <h1 class="page-hero__title reveal">Pick a suit,<br><em>see the projects I built with it.</em></h1>
+      <h1 class="page-hero__title reveal">Pick a suit,<br><em>see the projects I built with it<span class="hero-easter-egg" data-easter-egg>.</span></em></h1>
       <p class="page-hero__lede reveal">Each suit represents a different role I played in a project. Hover a card to see what it means. Click to reveal the work.</p>
     </div>
   </section>
@@ -44,6 +44,26 @@
     <div class="container">
       <div class="deck" data-deck role="list" aria-label="Choose a suit"></div>
       <div data-suit-view class="is-hidden"></div>
+      <div data-hobbies-view class="is-hidden"></div>
+
+      <div class="joker-overlay is-hidden" data-joker-overlay>
+        <button type="button" class="joker-overlay__close" data-joker-close aria-label="Close">&times;</button>
+        <p class="joker-overlay__label" data-joker-label>Ha, you found me!</p>
+        <button type="button" class="play-card play-card--black joker-card" data-joker-card aria-label="Joker — Hobbies and sports">
+          <div class="play-card__inner">
+            <div class="play-card__face play-card__face--front">
+              <span class="play-card__corner play-card__corner--tl"><span class="play-card__rank">J</span><img class="play-card__pip" src="./img/joker-icon.svg" alt=""></span>
+              <img class="play-card__center" src="./img/joker-icon.svg" alt="">
+              <span class="play-card__corner play-card__corner--br"><span class="play-card__rank">J</span><img class="play-card__pip" src="./img/joker-icon.svg" alt=""></span>
+            </div>
+            <div class="play-card__face play-card__face--back">
+              <img class="play-card__pip play-card__pip--sm" src="./img/joker-icon.svg" alt="">
+              <h3 class="play-card__title">Hobbies and sports</h3>
+              <p class="play-card__desc">The hobbies and sports i enjoyed throughout my life</p>
+            </div>
+          </div>
+        </button>
+      </div>
     </div>
   </section>
 

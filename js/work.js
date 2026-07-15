@@ -221,3 +221,80 @@
     );
   }
 })();
+
+(function () {
+  "use strict";
+
+  document.addEventListener("DOMContentLoaded", function () {
+    initJokerEasterEgg();
+  });
+
+  function initJokerEasterEgg() {
+    var trigger = document.querySelector("[data-easter-egg]");
+    var overlay = document.querySelector("[data-joker-overlay]");
+    var closeBtn = document.querySelector("[data-joker-close]");
+    var jokerCard = document.querySelector("[data-joker-card]");
+    var hobbiesView = document.querySelector("[data-hobbies-view]");
+    var deckEl = document.querySelector("[data-deck]");
+    var suitViewEl = document.querySelector("[data-suit-view]");
+    if (!trigger || !overlay || !jokerCard || !hobbiesView || !deckEl) return;
+
+    trigger.addEventListener("click", function (e) {
+      e.stopPropagation();
+      overlay.classList.remove("is-hidden");
+    });
+
+    closeBtn.addEventListener("click", function () {
+      overlay.classList.add("is-hidden");
+    });
+    overlay.addEventListener("click", function (e) {
+      if (e.target === overlay) overlay.classList.add("is-hidden");
+    });
+
+    jokerCard.addEventListener("click", function () {
+      overlay.classList.add("is-hidden");
+
+      deckEl.style.display = "none";
+      deckEl.classList.add("is-hidden");
+      if (suitViewEl) {
+        suitViewEl.style.display = "none";
+        suitViewEl.classList.add("is-hidden");
+        suitViewEl.innerHTML = "";
+      }
+
+      renderHobbiesView(hobbiesView, deckEl);
+    });
+  }
+
+  function renderHobbiesView(hobbiesView, deckEl) {
+    var sports = ["Swimming", "Taekwondo", "Badminton", "Chess"];
+    var hobbies = ["Gaming", "Anime", "Cooking", "Jogging", "Singing", "Dancing", "Fashion", "Fragrance"];
+
+    hobbiesView.classList.remove("is-hidden");
+    hobbiesView.style.display = "";
+    hobbiesView.innerHTML =
+      '<header class="hobbies-view__head">' +
+        '<button type="button" class="suit-view__back" data-hobbies-back aria-label="Back to all suits"><span aria-hidden="true">\u2190</span> Back to all suits</button>' +
+        '<p class="eyebrow" style="margin-bottom:.5rem">Wild Card</p>' +
+        '<h2 class="suit-view__title">Hobbies &amp; Sports</h2>' +
+        '<p class="suit-view__desc">These are the different hobbies and sports i enjoyed throughout my life.</p>' +
+      '</header>' +
+      '<div class="hobbies-grid">' +
+        '<div class="hobbies-group"><h3>Sport</h3><ul>' +
+          sports.map(function (s) { return '<li>' + s + '</li>'; }).join("") +
+        '</ul></div>' +
+        '<div class="hobbies-group"><h3>Hobby</h3><ul>' +
+          hobbies.map(function (h) { return '<li>' + h + '</li>'; }).join("") +
+        '</ul></div>' +
+      '</div>';
+
+    var backBtn = hobbiesView.querySelector("[data-hobbies-back]");
+    backBtn.addEventListener("click", function () {
+      hobbiesView.style.display = "none";
+      hobbiesView.classList.add("is-hidden");
+      hobbiesView.innerHTML = "";
+      deckEl.style.display = "";
+      deckEl.classList.remove("is-hidden");
+    });
+  }
+})();
