@@ -86,11 +86,19 @@
 
     function showStage4() {
       // Panels 3 and 4 fade away simultaneously, then Panel 5 fades
-      // into the center.
-      var topImg = slotTop.querySelector("img");
-      if (topImg) topImg.classList.add("is-leaving-left");
-      var bottomImg = slotBottom.querySelector("img");
-      if (bottomImg) bottomImg.classList.add("is-leaving-right");
+      // into the center. Querying only the first <img> per slot would
+      // miss a panel still mid-transition if the user clicked through
+      // faster than its slide animation could finish (replaceSlot
+      // leaves the outgoing image in the DOM until its own
+      // animationend fires). Fade out every image currently sitting
+      // in each slot, not just the first, so a fast clicker never
+      // leaves a stray panel on screen.
+      slotTop.querySelectorAll("img").forEach(function (img) {
+        img.classList.add("is-leaving-left");
+      });
+      slotBottom.querySelectorAll("img").forEach(function (img) {
+        img.classList.add("is-leaving-right");
+      });
 
       center.innerHTML = "";
       center.style.display = "grid";
@@ -100,7 +108,6 @@
     function updateHint() {
       if (stage === 0) hint.innerHTML = "<span>Click anywhere to continue</span>";
       else if (stage > 0 && stage < 4) hint.innerHTML = "<span>Click to turn the page &middot; " + (stage + 1) + " / 5</span>";
-      else if (stage === 4) hint.innerHTML = '<span class="manga-hero__hint--scroll">Scroll to continue <span class="manga-hero__arrow">&darr;</span></span>';
       else hint.innerHTML = "";
     }
 
