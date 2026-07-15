@@ -277,6 +277,22 @@
   box-shadow: 0 30px 80px rgba(26,26,26,.25), inset 0 1px 0 rgba(255,255,255,.9);
   animation: stCardIn .4s cubic-bezier(.2,.7,.2,1) both;
 }
+
+/* Hidden leaf node — invisible by default, revealed only on hover/focus.
+   Skips the reveal-in animation entirely so it doesn't flash visible
+   when the skill tree scrolls into view; opacity is toggled purely by
+   :hover/:focus-visible instead. */
+.tree-node--hidden {
+  opacity: 0;
+  transform: none;
+  transition: opacity .3s var(--ease), transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease), background .3s var(--ease);
+}
+.skill-tree.is-visible .tree-node--hidden { animation: none; }
+.tree-node--hidden:hover,
+.tree-node--hidden:focus-visible {
+  opacity: 1;
+}
+
 @keyframes stCardIn { 0% { opacity: 0; transform: translateY(14px) scale(.96); } 100% { opacity: 1; transform: translateY(0) scale(1); } }
 .tree-card__close { position: absolute; top: 12px; right: 14px; width: 32px; height: 32px; border-radius: 50%; font-size: 22px; line-height: 1; color: var(--muted); transition: color .2s var(--ease), background .2s var(--ease); }
 .tree-card__close:hover { color: var(--text); background: var(--bg-alt); }
