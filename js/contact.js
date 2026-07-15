@@ -50,6 +50,15 @@
           { text: ")", cls: "tk-p" },
         ],
       },
+      {
+        lang: "lua", ext: "lua", hold: 4000,
+        tokens: [
+          { text: "print", cls: "tk-fn" },
+          { text: "(", cls: "tk-p" },
+          { text: '"Psst... there\'s a joker hiding in the deck."', cls: "tk-str" },
+          { text: ")", cls: "tk-p" },
+        ],
+      },
     ];
 
     var seqIndex = 0;
