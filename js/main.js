@@ -11,6 +11,7 @@
     initActiveLink();
     initReveal();
     initScrollHero();
+    initConsoleEasterEgg();
   });
 
   // Drives the home-page hero: as the section is scrolled through, the
@@ -313,4 +314,11 @@
     );
     els.forEach(function (el) { io.observe(el); });
   }
+  function initConsoleEasterEgg() {
+    console.log(
+      "%c🃏 Psst... there's a joker hiding in the deck.",
+      "font-family: monospace; font-size: 13px; color: #1a1a1a; background: #d8cfc4; padding: 4px 8px; border-radius: 4px;"
+    );
+  }
+
 })();
