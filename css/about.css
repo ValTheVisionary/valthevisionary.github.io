@@ -320,3 +320,7 @@
     transition: none !important;
   }
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

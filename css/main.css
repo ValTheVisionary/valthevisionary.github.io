@@ -348,3 +348,7 @@ p { margin: 0; }
   .grid--4, .grid--3, .grid--2 { grid-template-columns: 1fr; }
   .footer__inner { flex-direction: column; align-items: flex-start; }
 }
+
+::-webkit-scrollbar {
+  display: none;
+}

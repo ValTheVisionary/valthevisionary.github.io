@@ -184,10 +184,30 @@
       if (subject.length < 2) { setError("subject", "Please add a subject."); valid = false; }
       if (message.length < 10) { setError("message", "Message should be at least 10 characters."); valid = false; }
 
-      if (!valid) return;
+      if (!valid) {
+        e.preventDefault();
+        return;
+      }
 
-      form.reset();
-      if (successEl) successEl.style.display = "block";
+      try {
+        const response = await fetch(form.action, {
+          method: "POST",
+          body: new FormData(form),
+          headers: {
+            Accept: "application/json"
+          }
+        });
+    
+        if (response.ok) {
+          form.reset();
+          if (successEl) successEl.style.display = "block";
+        } else {
+          alert("Failed to send your message.");
+        }
+      } catch (err) {
+        console.error(err);
+        alert("Something went wrong.");
+      }
     });
   }
 })();

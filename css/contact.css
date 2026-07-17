@@ -146,3 +146,7 @@
   .contact-hero__right { order: -1; max-width: 360px; margin-inline: auto; }
 }
 @media (max-width: 560px) { .contact-cards { grid-template-columns: 1fr; } }
+
+::-webkit-scrollbar {
+  display: none;
+}

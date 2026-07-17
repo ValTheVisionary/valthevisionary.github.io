@@ -256,3 +256,7 @@ img.play-card__center {
     opacity: 1 !important; transform: none !important;
   }
 }
+
+::-webkit-scrollbar {
+  display: none;
+}
