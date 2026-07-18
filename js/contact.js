@@ -169,7 +169,7 @@
       }
     });
 
-    form.addEventListener("submit", function (e) {
+    form.addEventListener("submit", async function (e) {
       e.preventDefault();
       if (successEl) successEl.style.display = "none";
 
