@@ -241,6 +241,34 @@ p { margin: 0; }
 .card h3 { font-size: 1.5rem; margin: .75rem 0 .6rem; }
 .card p { color: var(--muted); font-size: 15px; }
 
+/* ---------- Certification card (hover reveal) ---------- */
+.cert-card {
+  position: relative;
+  display: block;
+  background: var(--bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  padding: 2rem 1.75rem;
+  overflow: hidden;
+  transition: transform .35s var(--ease), box-shadow .35s var(--ease), border-color .35s var(--ease);
+}
+.cert-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-md); border-color: rgba(26,26,26,.18); }
+.cert-card__content { transition: opacity .35s var(--ease); }
+.cert-card__content h3 { font-size: 1.5rem; margin: 0 0 .6rem; }
+.cert-card__content p { color: var(--muted); font-size: 15px; }
+.cert-card__media {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  border-radius: inherit;
+  overflow: hidden;
+  pointer-events: none;
+  transition: opacity .35s var(--ease);
+}
+.cert-card__media img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.cert-card:hover .cert-card__content { opacity: 0; }
+.cert-card:hover .cert-card__media { opacity: 1; }
+
 /* ---------- Panel / skills ---------- */
 .panel {
   background: var(--bg);
@@ -319,6 +347,9 @@ p { margin: 0; }
 @media (prefers-reduced-motion: reduce) {
   .reveal { opacity: 1; transform: none; transition: none; }
   html { scroll-behavior: auto; }
+  .cert-card__content, .cert-card__media {
+    transition: none !important;
+  }
 }
 
 /* ---------- Responsive ---------- */

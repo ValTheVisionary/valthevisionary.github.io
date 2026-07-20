@@ -192,8 +192,6 @@
 
     tree.querySelectorAll("[data-node]").forEach(function (btn) {
       btn.addEventListener("click", function () {
-        // Leaves represent projects — send the visitor straight to the
-        // Work page instead of opening the info card.
         if (btn.getAttribute("data-kind") === "leaf") {
           window.location.href = "./work.html";
           return;
