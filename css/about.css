@@ -278,10 +278,7 @@
   animation: stCardIn .4s cubic-bezier(.2,.7,.2,1) both;
 }
 
-/* Hidden leaf node — invisible by default, revealed only on hover/focus.
-   Skips the reveal-in animation entirely so it doesn't flash visible
-   when the skill tree scrolls into view; opacity is toggled purely by
-   :hover/:focus-visible instead. */
+/* Hidden leaf node — invisible by default, revealed only on hover/focus. */
 .tree-node--hidden {
   opacity: 0;
   transform: none;

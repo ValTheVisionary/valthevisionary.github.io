@@ -181,25 +181,12 @@
 @keyframes jokerLabelIn { 0% { opacity: 0; transform: translateY(-10px); } 100% { opacity: 1; transform: translateY(0); } }
 
 .joker-card {
-  /* The joker card is rendered inside .joker-overlay rather than
-     inside .deck, so it doesn't automatically inherit the --card-w /
-     --card-h custom properties .deck defines for the suit cards. Without
-     these, width/height fall back to their initial value (auto),
-     which is what made the card's proportions look wrong. Re-declare
-     the same sizing here (mirrored in the media queries below) so the
-     joker card always matches the suit cards' proportions exactly. */
   --card-w: 240px;
   --card-h: 340px;
   animation: jokerCardIn .6s cubic-bezier(.2,.7,.2,1) both;
   animation-delay: .1s;
 }
 
-/* Sizing overrides for the joker card's SVG icon. `.play-card__pip`,
-   `.play-card__pip--sm`, and `.play-card__center` size the star glyph
-   used by the suit cards via font-size, which has no effect on an
-   <img>. These rules are scoped to the `img` tag specifically, so
-   they only apply to the joker card's SVG and leave the suit cards'
-   text glyphs untouched. */
 img.play-card__pip {
   width: 1.15rem;
   height: 1.15rem;

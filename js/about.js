@@ -46,9 +46,6 @@
       return img;
     }
 
-    // Fades/slides the current image out of `slotEl` (if any) while
-    // adding the new image with its own enter animation, so both play
-    // at the same time instead of the outgoing panel just disappearing.
     function replaceSlot(slotEl, newSrc, exitClass, enterClass) {
       var oldImg = slotEl.querySelector("img");
       if (oldImg) {
@@ -86,13 +83,7 @@
 
     function showStage4() {
       // Panels 3 and 4 fade away simultaneously, then Panel 5 fades
-      // into the center. Querying only the first <img> per slot would
-      // miss a panel still mid-transition if the user clicked through
-      // faster than its slide animation could finish (replaceSlot
-      // leaves the outgoing image in the DOM until its own
-      // animationend fires). Fade out every image currently sitting
-      // in each slot, not just the first, so a fast clicker never
-      // leaves a stray panel on screen.
+      // into the center. 
       slotTop.querySelectorAll("img").forEach(function (img) {
         img.classList.add("is-leaving-left");
       });

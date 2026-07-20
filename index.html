@@ -30,23 +30,6 @@
 </header>
 
 <main>
-
-  <!--
-    Scroll-driven hero video.
-    The section is tall (400vh) so there's room to scroll through it; the
-    inner .scroll-hero__pin stays pinned to the viewport via CSS
-    position: sticky while that happens. js/main.js (initScrollHero) reads
-    scroll progress through the section and:
-      - scrubs the video's currentTime to match (no autoplay — playback is
-        entirely driven by scroll position)
-      - types the overlay headline in sync with that same progress
-    Once the section has been fully scrolled through, the page continues
-    scrolling into the rest of the site normally.
-
-    To swap in the final video: replace
-    img/hero-scroll-video-placeholder.mp4 with your export, keeping the
-    same filename — or update the src attribute below.
-  -->
   <section class="scroll-hero" data-scroll-hero>
     <div class="scroll-hero__pin" data-scroll-hero-pin>
       <video

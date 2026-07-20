@@ -119,9 +119,6 @@ p { margin: 0; }
    A tall pinned section that scrubs a video and types out headline
    copy in sync with scroll position. See js/main.js (initScrollHero)
    for the scroll -> video-frame / text-reveal mapping.
-   Swap the placeholder video by replacing
-   img/hero-scroll-video-placeholder.mp4 with the final export
-   (same filename), or update the `src` attribute in index.html.
 ------------------------------------------------------------------ */
 .scroll-hero {
   position: relative;
