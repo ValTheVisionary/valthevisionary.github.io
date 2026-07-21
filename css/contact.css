@@ -1,6 +1,9 @@
 /* =========================================================
    contact.css — contact hero split, terminal, cards, form
-   ========================================================= */
+   ========================================================= 
+*/
+
+/* check work page (work.html, work.css and work.js) for hidden joker card easter egg */
 
 .contact-hero { padding: clamp(4rem, 8vw, 7rem) 0 clamp(3rem, 6vw, 5rem); }
 .contact-hero__inner {

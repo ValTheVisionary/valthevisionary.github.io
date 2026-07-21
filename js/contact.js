@@ -1,5 +1,6 @@
 // contact.js — animated terminal "typewriter" snippet, subtle portrait
 // parallax on mouse move, and client-side contact form validation.
+// check work page (work.html, work.css and work.js) for hidden joker card easter egg
 
 (function () {
   "use strict";

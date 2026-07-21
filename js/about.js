@@ -1,5 +1,6 @@
 // about.js — manga-panel intro hero + interactive skill tree
 // for the About page.
+// check work page (work.html, work.css and work.js) for hidden joker card easter egg
 
 (function () {
   "use strict";

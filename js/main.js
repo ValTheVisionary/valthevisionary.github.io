@@ -1,6 +1,7 @@
 // main.js — shared behavior across all pages: nav scroll state,
 // mobile menu toggle, active-link highlighting, reveal-on-scroll,
 // and the home page's scroll-driven hero video.
+// check work page (work.html, work.css and work.js) for hidden joker card easter egg
 
 (function () {
   "use strict";

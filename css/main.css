@@ -1,7 +1,10 @@
 /* =========================================================
    main.css — shared tokens, reset, nav, footer, layout,
    buttons, sections, cards, and home-page-specific styles
-   ========================================================= */
+   ========================================================= 
+*/
+
+/* check work page (work.html, work.css and work.js) for hidden joker card easter egg */
 
 /* ---------- Tokens ---------- */
 :root {

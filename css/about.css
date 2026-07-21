@@ -1,6 +1,9 @@
 /* =========================================================
    about.css — about grid, values, manga hero, skill tree
-   ========================================================= */
+   ========================================================= 
+*/
+
+/* check work page (work.html, work.css and work.js) for hidden joker card easter egg */
 
 .about-grid {
   display: grid;
@@ -205,6 +208,18 @@
 @keyframes stPulse { 0%,100% { box-shadow: 0 0 0 4px rgba(216,207,196,.35); } 50% { box-shadow: 0 0 0 8px rgba(216,207,196,.15); } }
 .tree-node__label { font-family: var(--serif); font-size: 1.05rem; letter-spacing: -.01em; }
 .tree-node__sub { font-size: 12px; color: var(--muted); text-align: center; }
+
+.tree-node__logo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  border-radius: 6px;
+  margin-bottom: 2px;
+}
+.tree-node--trunk .tree-node__logo {
+  width: 150px;
+  height: 50px;
+}
 
 .tree-node--trunk {
   min-width: 280px; padding: 1.25rem 1.75rem;
